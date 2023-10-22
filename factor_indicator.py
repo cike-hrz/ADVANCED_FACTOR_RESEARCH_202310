@@ -41,7 +41,7 @@ def cum_rank_ic(R:np.ndarray, X:np.ndarray):
     return rank_ic(R,X).cumsum()
 
 def group_reg(R:np.ndarray, X:np.ndarray, group:int):
-    N = R.shape[1]
+    N = R.shape[0]
     num = N//group
     matrix_R_ascending_X = np.take_along_axis(R,X.argsort(axis=0),axis=0)
     tmp = list()
