@@ -5,8 +5,8 @@ Group discussion and project, major work are as follows:<br>
 3.Optimization method introduced in ICLR2023 reference VTM model.
 
 Contributors:<br>
-Ding,Xuexiang<br>
 Huang,Renzhuo<br>
 Liu,Siyang<br>
-Xu,Kaiqi
+Xu,Kaiqi<br>
+Xue,Chongyang<br>
 (Sorted alphabetically by last name)
