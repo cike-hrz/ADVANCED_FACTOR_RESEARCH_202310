@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 # wl-zcy IC definition
 def ic(R:np.ndarray, X:np.ndarray):
@@ -57,4 +58,22 @@ def group_reg(R:np.ndarray, X:np.ndarray, group:int):
 # APM IC definition
 
 
-class 
+def ic_figures(ic:np.ndarray, 
+               ric:np.ndarray, 
+               cum_ic:np.ndarray, 
+               cum_ric:np.ndarray):
+    plt.figure(figsize=(20,12))
+    plt.subplot(4, 1, 1)
+    plt.plot(ic)
+    plt.title('IC')
+    plt.subplot(4, 1, 2)
+    plt.plot(ric)
+    plt.title('Rank IC')
+    plt.subplot(4, 1, 3)
+    plt.plot(cum_ic)
+    plt.title('Cummulative IC')
+    plt.subplot(4, 1, 4)
+    plt.plot(cum_ric)
+    plt.title('Cummulative Rank IC')
+    plt.tight_layout()
+    plt.show()
