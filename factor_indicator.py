@@ -22,16 +22,16 @@ def ic(R:np.ndarray, X:np.ndarray):
     '''
     R_bar = np.roll((R - np.mean(R,axis=0)),shift=-1,axis=1)
     X_bar = X - np.mean(X,axis=0)
-    ic_arr = np.sum(R_bar*X_bar,axis=0)\
-        /np.sqrt((R_bar**2).sum(axis=0)*(X_bar**2).sum(axis=0))
+    ic_arr = np.divide(np.sum(R_bar*X_bar,axis=0),
+                       np.sqrt((R_bar**2).sum(axis=0)*(X_bar**2).sum(axis=0)))
     return ic_arr
 
 def rank_ic(R:np.ndarray, X:np.ndarray):
     R_bar = np.roll((R - np.mean(R,axis=0)),shift=-1,axis=1)
     rankX = (X.T).argsort().argsort().T
     X_bar = rankX - np.mean(rankX,axis=0)
-    rank_ic_arr = np.sum(R_bar*X_bar,axis=0)\
-        /np.sqrt((R_bar**2).sum(axis=0)*(X_bar**2).sum(axis=0))
+    rank_ic_arr = np.divide(np.sum(R_bar*X_bar,axis=0),
+                            np.sqrt((R_bar**2).sum(axis=0)*(X_bar**2).sum(axis=0)))
     return rank_ic_arr
 
 def cum_ic(R:np.ndarray, X:np.ndarray):
